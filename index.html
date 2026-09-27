@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supernova // Cosmic Nucleosynthesis Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="viewport-wrapper">
+    <canvas id="cosmic-canvas"></canvas>
+
+    <!-- Top Telemetry Header -->
+    <header class="hud-top">
+      <div class="brand">
+        <span class="pulsar-dot"></span>
+        <h1>SUPERNOVA // <span class="sub">NUCLEOSYNTHESIS LAB</span></h1>
+      </div>
+      <div class="metrics">
+        <span>Stellar Phase: <strong id="phase-readout">Blue Supergiant</strong></span>
+        <span>Peak Temp: <strong id="temp-readout">28,000 K</strong></span>
+        <button class="audio-toggle-btn" id="audio-btn">🔊 Audio: OFF</button>
+      </div>
+    </header>
+
+    <!-- Periodic Table / Forged Elements Legend -->
+    <aside class="elements-hud">
+      <h3>R-PROCESS NUCLEOSYNTHESIS</h3>
+      <div class="element-bars">
+        <div class="el-item">
+          <div class="el-label">
+            <span class="swatch" style="background:#60a5fa"></span>
+            <span>Iron (Fe)</span>
+          </div>
+          <div class="el-bar-track"><div class="el-fill" id="bar-fe" style="width: 25%"></div></div>
+        </div>
+        <div class="el-item">
+          <div class="el-label">
+            <span class="swatch" style="background:#facc15"></span>
+            <span>Gold (Au)</span>
+          </div>
+          <div class="el-bar-track"><div class="el-fill" id="bar-au" style="width: 0%"></div></div>
+        </div>
+        <div class="el-item">
+          <div class="el-label">
+            <span class="swatch" style="background:#a78bfa"></span>
+            <span>Platinum (Pt)</span>
+          </div>
+          <div class="el-bar-track"><div class="el-fill" id="bar-pt" style="width: 0%"></div></div>
+        </div>
+        <div class="el-item">
+          <div class="el-label">
+            <span class="swatch" style="background:#34d399"></span>
+            <span>Uranium (U)</span>
+          </div>
+          <div class="el-bar-track"><div class="el-fill" id="bar-u" style="width: 0%"></div></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Control Deck -->
+    <aside class="control-deck">
+      <div class="deck-group">
+        <label>REMNANT PROGENITOR MASS</label>
+        <div class="btn-grid">
+          <button class="preset-btn active" data-mass="18">18 M☉ (Pulsar)</button>
+          <button class="preset-btn" data-mass="45">45 M☉ (Black Hole)</button>
+          <button class="preset-btn" data-mass="80">80 M☉ (Hypernova)</button>
+        </div>
+      </div>
+
+      <div class="deck-group">
+        <div class="label-row">
+          <label for="compression-slider">Core Degeneracy Compression</label>
+          <span class="badge" id="comp-val">1.0x</span>
+        </div>
+        <input type="range" id="compression-slider" min="0.4" max="2.4" step="0.1" value="1.0" />
+      </div>
+
+      <div class="deck-group actions">
+        <button class="btn trigger-btn" id="collapse-btn">💥 TRIGGER CORE COLLAPSE</button>
+        <button class="btn reset-btn" id="reset-btn">↺ Reset Star System</button>
+      </div>
+
+      <p class="deck-hint">
+        ⚡ <strong>Mechanics:</strong> Once outward radiation pressure fails, core implodes at 23% $c$, rebounding into an explosive shockwave that fuses cosmic heavy elements.
+      </p>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
